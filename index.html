@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <meta name="description" content="" />
+    <title>MultiPurpose Hybrid Mobile App Simulator</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+
+<body>
+    <div class="contenitore">
+        <div class="phone-container dark">
+            <div class="phone-shape small">
+                <span class="button-one buttons"></span>
+                <span class="button-two buttons"></span>
+                <span class="button-three buttons"></span>
+                <span class="button-four button last"></span>
+                <div class="top-details">
+                    <span class="camera"></span>
+                    <span class="circle"></span>
+                    <span class="speaker"></span>
+                </div>
+                <div class="phone-screen">
+                    <iframe name="preview" src="home.html" style="border:none"></iframe> 
+                </div>
+                <div class="circle-button"></div>
+            </div>
+        </div>
+        <div class="description">
+            <h3>App Simulator</h3>
+            <h4>Replace iframe URL with your app URL</h4>
+        </div>
+        <div class="clr"></div>
+    </div>
+    <script src="javas/jquery-2.1.4.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+        if( $('.cd-stretchy-nav').length > 0 ) {
+            var stretchyNavs = $('.cd-stretchy-nav');
+            
+            stretchyNavs.each(function(){
+                var stretchyNav = $(this),
+                    stretchyNavTrigger = stretchyNav.find('.cd-nav-trigger');
+                
+                stretchyNavTrigger.on('click', function(event){
+                    event.preventDefault();
+                    stretchyNav.toggleClass('nav-is-visible');
+                });
+            });
+
+            $(document).on('click', function(event){
+                ( !$(event.target).is('.cd-nav-trigger') && !$(event.target).is('.cd-nav-trigger span') ) && stretchyNavs.removeClass('nav-is-visible');
+            });
+        }
+        });
+    </script>
+</body>
+</html>
